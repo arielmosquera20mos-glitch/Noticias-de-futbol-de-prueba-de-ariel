@@ -1,22 +1,123 @@
-<section class="noticias">
-    <article>
-        <img src="img/HQouf9WEAAeu4N.jpg" alt="Noticia 1">
-        <h3>Rodri al Barcelona no quiso ir al club merengue.</h3>
-        <p>El club blanco sorprende con un fichaje inesperado que promete cambiar la temporada.</p>
-        <a href="#">Leer más</a>
-    </article>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <article>
-        <img src="img/HQoufg2WEAAeu4N.jpg" alt="Noticia 2">
-        <h3>Messi rompe récord histórico</h3>
-        <p>El argentino sigue demostrando por qué es uno de los mejores jugadores de todos los tiempos.</p>
-        <a href="#">Leer más</a>
-    </article>
+    <title>Agenda Deportiva de Hoy</title>
 
-    <article>
-        <img src="img/images.jpg" alt="Noticia 3">
-        <h3>La Premier League arde</h3>
-        <p>Los equipos ingleses protagonizan una jornada llena de goles y sorpresas.</p>
-        <a href="#">Leer más</a>
-    </article>
-</section>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1b8f3a;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 38px;
+            margin-bottom: 25px;
+        }
+
+        .boton-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: white;
+            color: #168033;
+            border: none;
+            padding: 15px 25px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .partidos {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .partido {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #222;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Agenda Deportiva de Hoy</h1>
+
+    <div class="boton-container">
+        <button onclick="mostrarPartidos()">
+            Ver todos los partidos de hoy
+        </button>
+    </div>
+
+    <div class="partidos" id="listaPartidos">
+
+        <div class="partido">Partido 1<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 2<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 3<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 4<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 5<br>Equipo A vs Equipo B</div>
+
+        <div class="partido">Partido 6<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 7<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 8<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 9<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 10<br>Equipo A vs Equipo B</div>
+
+        <div class="partido">Partido 11<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 12<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 13<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 14<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 15<br>Equipo A vs Equipo B</div>
+
+        <div class="partido">Partido 16<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 17<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 18<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 19<br>Equipo A vs Equipo B</div>
+        <div class="partido">Partido 20<br>Equipo A vs Equipo B</div>
+
+    </div>
+
+    <script>
+        function mostrarPartidos() {
+            const lista = document.getElementById("listaPartidos");
+
+            if (lista.style.display === "grid") {
+                lista.style.display = "none";
+            } else {
+                lista.style.display = "grid";
+            }
+        }
+    </script>
+
+</body>
+</html>
