@@ -8,116 +8,202 @@
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #1b8f3a;
-            padding: 30px;
+            background: linear-gradient(135deg, #0b6b2d, #159447);
+            min-height: 100vh;
+            padding: 25px;
         }
 
-        h1 {
+        /* ENCABEZADO */
+        header {
             text-align: center;
             color: white;
-            font-size: 38px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
-        .boton-container {
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+            opacity: 0.9;
+        }
+
+        /* BOTÓN */
+        .contenedor-boton {
             text-align: center;
             margin-bottom: 30px;
         }
 
         button {
             background-color: white;
-            color: #168033;
+            color: #08752e;
             border: none;
-            padding: 15px 25px;
-            font-size: 18px;
-            border-radius: 10px;
-            cursor: pointer;
+            padding: 15px 28px;
+            font-size: 17px;
             font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
         button:hover {
-            background-color: #e0e0e0;
+            transform: scale(1.05);
+            background-color: #e8ffe8;
         }
 
+        /* CONTENEDOR DE PARTIDOS */
         .partidos {
             display: none;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            max-width: 1100px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 18px;
+            max-width: 1200px;
             margin: auto;
         }
 
+        /* TARJETA */
         .partido {
             background-color: white;
-            border-radius: 12px;
+            border-radius: 15px;
             padding: 20px;
             text-align: center;
-            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+            transition: 0.3s;
+        }
+
+        .partido:hover {
+            transform: translateY(-5px);
+        }
+
+        .hora {
+            color: #078332;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .equipos {
+            font-size: 19px;
+            font-weight: bold;
             color: #222;
-            min-height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .competicion {
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .canal {
+            background-color: #e4f7e9;
+            color: #08752e;
+            padding: 7px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+
+        /* CELULARES */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            body {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Agenda Deportiva de Hoy</h1>
+    <header>
+        <h1>⚽ Agenda Deportiva de Hoy</h1>
+        <p>Todos los partidos y eventos deportivos del día</p>
+    </header>
 
-    <div class="boton-container">
+    <div class="contenedor-boton">
         <button onclick="mostrarPartidos()">
-            Ver todos los partidos de hoy
+            📅 Ver partidos de hoy
         </button>
     </div>
 
-    <div class="partidos" id="listaPartidos">
+    <main class="partidos" id="listaPartidos">
 
-        <div class="partido">Partido 1<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 2<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 3<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 4<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 5<br>Equipo A vs Equipo B</div>
+        <div class="partido">
+            <div class="hora">⏰ 10:00</div>
+            <div class="equipos">Equipo A ⚽ Equipo B</div>
+            <div class="competicion">🏆 Liga Nacional</div>
+            <div class="canal">📺 ESPN</div>
+        </div>
 
-        <div class="partido">Partido 6<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 7<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 8<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 9<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 10<br>Equipo A vs Equipo B</div>
+        <div class="partido">
+            <div class="hora">⏰ 12:00</div>
+            <div class="equipos">Equipo C ⚽ Equipo D</div>
+            <div class="competicion">🏆 Premier League</div>
+            <div class="canal">📺 Star+</div>
+        </div>
 
-        <div class="partido">Partido 11<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 12<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 13<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 14<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 15<br>Equipo A vs Equipo B</div>
+        <div class="partido">
+            <div class="hora">⏰ 14:00</div>
+            <div class="equipos">Equipo E ⚽ Equipo F</div>
+            <div class="competicion">🏆 LaLiga</div>
+            <div class="canal">📺 ESPN</div>
+        </div>
 
-        <div class="partido">Partido 16<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 17<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 18<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 19<br>Equipo A vs Equipo B</div>
-        <div class="partido">Partido 20<br>Equipo A vs Equipo B</div>
+        <div class="partido">
+            <div class="hora">⏰ 16:00</div>
+            <div class="equipos">Equipo G ⚽ Equipo H</div>
+            <div class="competicion">🏆 Champions League</div>
+            <div class="canal">📺 FOX Sports</div>
+        </div>
 
-    </div>
+        <div class="partido">
+            <div class="hora">⏰ 18:00</div>
+            <div class="equipos">Equipo I ⚽ Equipo J</div>
+            <div class="competicion">🏆 Copa Internacional</div>
+            <div class="canal">📺 DirecTV Sports</div>
+        </div>
+
+        <!-- Puedes copiar estas tarjetas hasta tener 20 partidos -->
+
+    </main>
+
+    <footer>
+        <p>⚽ Agenda Deportiva © 2026</p>
+    </footer>
 
     <script>
         function mostrarPartidos() {
-            const lista = document.getElementById("listaPartidos");
+            const partidos = document.getElementById("listaPartidos");
+            const boton = document.querySelector("button");
 
-            if (lista.style.display === "grid") {
-                lista.style.display = "none";
+            if (partidos.style.display === "grid") {
+                partidos.style.display = "none";
+                boton.innerHTML = "📅 Ver partidos de hoy";
             } else {
-                lista.style.display = "grid";
+                partidos.style.display = "grid";
+                boton.innerHTML = "❌ Ocultar partidos";
             }
         }
     </script>
 
 </body>
 </html>
+
